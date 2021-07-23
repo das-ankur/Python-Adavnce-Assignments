@@ -1,0 +1,35 @@
+Q1. What is the purpose of Python's OOP?
+Ans. Object-oriented programming has four basic concepts: encapsulation, abstraction, inheritance and polymorphism. Encapsulation is used to create classes with variables and it's
+associated functions. Abstraction is used to create any interface for the user without revealing inner details. Inheritance is used to reuse the code and polymorphism is used to 
+create one interface with multiple forms. Beside that exceptoion handling is used to handle different exceptions during the execution of the program.
+
+Q2. Where does an inheritance search look for an attribute?
+Ans. Inheritance searches it's attribute for an attribute at first at it's own scope then it's parents scope.
+
+Q3. How do you distinguish between a class object and an instance object?
+Ans.  Instance object is an individual object of a certain class. An object obj that belongs to a class Circle, for example, is an instance of the class Circle.
+A class is a code template for creating objects. Objects have member variables and have behaviour associated with them. In python a class is created by the keyword class . 
+An object is created using the constructor of the class. This object will then be called the instance of the class.
+
+Q4. What makes the first argument in a class’s method function special?
+Ans. It should be always self, when  references the current object which is  in use.
+
+Q5. What is the purpose of the __init__ method?
+Ans. It's used as a constructor for a  class.
+
+Q6. What is the process for creating a class instance?
+Ans. obj = class_name(parameter_lists)
+
+Q7. What is the process for creating a class?
+Ans. class classname:
+        def __init__(self, *parameyters):
+        .
+        .
+        .
+        .
+        .
+      Constructors and then other functions
+              
+Q8. How would you define the superclasses of a class?
+Ans. The class from which a class inherits is called the parent or superclass. A class which inherits from a superclass is called a subclass, also called heir class or child 
+class. Superclasses are sometimes called ancestors as well. There exists a hierarchical relationship between classes.
