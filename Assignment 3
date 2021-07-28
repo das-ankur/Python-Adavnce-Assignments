@@ -1,0 +1,81 @@
+1. What is the concept of an abstract superclass?
+Ans. An abstract class can be considered as a blueprint for other classes. It allows you to
+create a set of methods that must be created within any child classes built from the 
+abstract class. A class which contains one or more abstract methods is called an abstract 
+class. An abstract method is a method that has a declaration but does not have an 
+implementation. While we are designing large functional units we use an abstract class. 
+When we want to provide a common interface for different implementations of a component, 
+we use an abstract class.
+
+2. What happens when a class statement's top level contains a basic assignment statement?
+Ans. It can mean a lot of thing but basically it means that there is a class variable which
+is initialized by some value.
+
+3. Why does a class need to manually call a superclass's __init__ method?
+Ans. The main reason for always calling base class _init__ is that base class may typically
+create member variable and initialize them to defaults. So if you don't call base class 
+init, none of that code would be executed and you would end up with base class that has no 
+member variables.
+
+4. How can you augment, instead of completely replacing, an inherited method?
+Ans. What we really want to do here is somehow augment the original giveRaise, instead 
+of replacing it altogether. The good way to do that in Python is by calling to the 
+original version directly, with augmented arguments, like this:
+class Manager(Person):
+  def giveRaise(self, percent, bonus=.10):
+    Person.giveRaise(self, percent + bonus) # Good: augment original
+This code leverages the fact that a class method can always be called either through an 
+instance (the usual way, where Python sends the instance to the self argument 
+automatically) or through the class (the less common scheme, where you must pass the 
+instance manually). In more symbolic terms, recall that a normal method call of this 
+form:
+instance.method(args...) is automatically translated by Python into this equivalent form:
+class.method(instance, args...)
+where the class containing the method to be run is determined by the inheritance search 
+rule applied to the method's name. You can code either form in your script, but there is
+a slight asymmetry between the two—you must remember to pass along the instance manually
+if you call through the class directly. The method always needs a subject instance one 
+way or another, and Python provides it automatically only for calls made through an 
+instance. For calls through the class name, you need to send an instance to self 
+yourself; for code inside a method like giveRaise, self already is the subject of the 
+call, and hence the instance to pass along.
+Calling through the class directly effectively subverts inheritance and kicks the call 
+higher up the class tree to run a specific version. In our case, we can use this 
+technique to invoke the default giveRaise in Person, even though it's been redefined at 
+the Manager level. In some sense, we must call through Person this way, because a 
+self.giveRaise() inside Manager's giveRaise code would loop—since self already is a 
+Manager, self.giveRaise() would resolve again to Manager.giveRaise, and so on and so 
+forth until available memory is exhausted.
+This "good" version may seem like a small difference in code, but it can make a huge 
+difference for future code maintenance—because the giveRaise logic lives in just one 
+place now (Person's method), we have only one version to change in the future as needs 
+evolve. And really, this form captures our intent more directly anyhow—we want to 
+perform the standard giveRaise operation, but simply tack on an extra bonus. Here's our 
+entire module file with this step applied:
+# Add customization of one behavior in a subclass class Person:
+self.name = name self.job = job self.pay = pay def lastName(self):
+return self.name.split()[-1] def giveRaise(self, percent):
+class Manager(Person):
+  def giveRaise(self, percent, bonus=.10): # Redefine at this level
+  Person.giveRaise(self, percent + bonus) # Call Person's version if_name_ == '_main_':
+  print(bob)
+  print(sue)
+  print(bob.lastName(), sue.lastName())
+  sue.giveRaise(.10)
+  print(sue)
+tom = Manager('Tom Jones', 'mgr', 50000) # Make a Manager:_init_
+tom.giveRaise(.10) # Runs custom version print(tom.lastName())
+# Runs inherited method print(tom) # Runs inherited_str_
+To test our Manager subclass customization, we've also added self-test code that makes a
+Manager, calls its methods, and prints it. Here's the new version's output:
+[Person: Bob Smith, 0]
+[Person: Sue Jones, 100000] Smith Jones
+[Person: Sue Jones, 110000] Jones
+[Person: Tom Jones, 60000]
+Everything looks good here: bob and sue are as before, and when tom the Manager is given a 10% raise, he really gets 20% (his pay goes from $50K to $60K), because the customized giveRaise in Manager is run for him only. Also notice how printing tom as a whole at the end of the test code displays the nice format defined in Person's_str_:
+Manager objects get this, lastName, and the_init_constructor method's code "for free" 
+from Person, by inheritance. 
+
+5. How is the local scope of a class different from that of a function?
+Ans. Local scope of a class is used by all it's inatances but this type of theory don't 
+work for class because it has no instance. 
