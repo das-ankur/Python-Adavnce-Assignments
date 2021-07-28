@@ -1,0 +1,36 @@
+Q1. What is the meaning of multiple inheritance?
+Ans. When a class is derived from more than one base class it is called multiple 
+Inheritance. The derived class inherits all the features of the base case.
+Q2. What is the concept of delegation?
+Ans. Delegator class as a mixin, which lets me define methods which the host class will 
+delegate to some other class. It does this by overriding the __getattr__() method, which is
+what each instance calls when there is a non-existent method / attribute defined by the 
+class. You might have seen this if you called an invalid method and see an AttributeError 
+saying 'Parent' object has no attribute 'take_out_the_trash'.
+
+Q3. What is the concept of composition?
+Ans.  Composition is a concept that models a has a relationship. It enables creating 
+complex types by combining objects of other types. This means that a class Composite can 
+contain an object of another class Component . This relationship means that a Composite 
+has a Component.
+
+Q4. What are bound methods and how do we use them?
+Ans. A bound method is the one which is dependent on the instance of the class as the first
+argument. It passes the instance as the first argument which is used to access the variable
+s and functions. In Python 3 and newer versions of python, all functions in the class are 
+by default bound methods.
+# Python code to demonstrate
+# use of bound methods
+class A:
+    def func(self, arg):
+        self.arg = arg
+        print("Value of arg = ", arg)
+# Creating an instance
+obj = A()  
+# bound method
+print(obj.func)
+
+Q5. What is the purpose of pseudoprivate attributes?
+Ans. One of the main problems that the pseudoprivate attribute feature is meant to 
+alleviate has to do with the way instance attributes are stored. In Python, all instance
+attributes wind up in the single instance object at the bottom of the class tree.
