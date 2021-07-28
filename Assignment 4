@@ -1,0 +1,47 @@
+Q1. Which two operator overloading methods can you use in your classes to support iteration?
+Ans. __iter__() ans __next__()
+
+Q2. In what contexts do the two operator overloading methods manage printing?
+Ans. In the context of string concatenation overloading methods manage printing.
+
+Q3. In a class, how do you intercept slice operations?
+Ans. The __getitem__ method is used for accessing list items, array elements, dictionary 
+entries etc. slice is a constructor in Python that creates slice object to represent set 
+of indices that the range(start, stop, step) specifies. __getitem__ method can be 
+implement in a class, and the behavior of slicing can be defined inside it.
+Syntax:
+__getitem__(slice(start, stop, step))
+
+class Demo:
+    def __getitem__(self, key):
+        print(key)
+          
+        return key
+a = Demo()
+# => slice 1
+a[1]
+# => slice(1, 2)
+a[1, 2]
+# => (1, 2, 3)
+a[1, 2, 3]
+
+Q4. In a class, how do you capture in-place addition?
+Ans. Python in its definition provides methods to perform inplace operations, i.e doing 
+assignment and computation in a single statement using “operator” module. For example,
+x += y is equivalent to x = operator.iadd(x, y) 
+Some Important Inplace operations :
+1. iadd() :- This function is used to assign and add the current value. This operation does
+“a+=b” operation. Assigning is not performed in case of immutable containers, such as 
+strings, numbers and tuples.
+import operator
+# using iadd() to add and assign value
+x = operator.iadd(2, 3);
+# printing the modified value
+print ("The value after adding and assigning : ", end="")
+print (x)
+
+Q5. When is it appropriate to use operator overloading?
+Ans. Operator Overloading means giving extended meaning beyond their predefined 
+operational meaning. For example operator + is used to add two integers as well as join 
+two strings and merge two lists. It is achievable because '+' operator is overloaded by 
+int class and str class.
