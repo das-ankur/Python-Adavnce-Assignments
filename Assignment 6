@@ -1,0 +1,17 @@
+Q1. Describe three applications for exception processing.
+Ans. The three major applications of  exception processing is:
+i) Runtime error identification
+ii) handle exception if occurs
+iii) Giving proper message to user for exception
+
+Q2. What happens if you don't do something extra to treat an exception?
+Ans. It can fail the program during runtime which can create a lot of problems.
+
+Q3. What are your options for recovering from an exception in your script?
+Ans. To take proper step when exception occurs by identifying the type of exception.
+
+Q4. Describe two methods for triggering exceptions in your script.
+Ans. First one is including some illegal operations  and second one is by  using raise keyword.
+Q5. Identify two methods for specifying actions to be executed at termination time, regardless of
+whether or not an exception exists.
+Ans. The two methods are: i) try and ii) finally.
