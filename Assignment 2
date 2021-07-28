@@ -1,0 +1,106 @@
+Q1. What is the relationship between classes and modules?
+Ans. So a module in python is simply a way to organize the code, and it contains either 
+python classes or just functions. If you need those classes or functions in your project, 
+you just import them. For instance, the math module in python contains just a bunch of 
+functions, and you just call those needed.
+
+Q2. How do you make instances and classes?
+Ans. instance_name = class_name()
+
+Q3. Where and how should be class attributes created?
+Ans. Class attributes are created inside class and it  isn't copied in each instance.
+def class_name():
+  att1 = 0
+  att2 = 'ABC'
+    
+Q4. Where and how are instance attributes created?
+Ans. An instance attribute is a Python variable belonging to one, and only one, object. 
+This variable is only accessible in the scope of this object and it is defined inside the 
+constructor function, __init__(self,..) of the class.
+class ExampleClass(object):
+  class_attr = 0        #class attribute
+  def __init__(self, instance_attr):
+    self.instance_attr = instance_attr      #instance attribute
+   
+Q5. What does the term "self" in a Python class mean? 
+Ans. self represents the instance of the class. By using the “self” keyword we can access 
+the attributes and methods of the class in python. It binds the attributes with the 
+given arguments. The reason you need to use self. is because Python does not use the 
+@ syntax to refer to instance attributes. Python decided to do methods in a way that 
+makes the instance to which the method belongs be passed automatically, but not 
+received automatically: the first parameter of methods is the instance the method is 
+called on.
+
+Q6. How does a Python class handle operator overloading?
+Ans. When we use an operator on user defined data types then automatically a special 
+function or magic function associated with that operator is invoked. Changing the 
+behavior of operator is as simple as changing the behavior of method or function. You 
+define methods in your class and operators work according to that behavior defined in 
+methods. When we use + operator, the magic method __add__ is automatically invoked in 
+which the operation for + operator is defined. There by changing this magic method’s 
+code, we can give extra meaning to the + operator. 
+# Python Program illustrate how
+# to overload an binary + operator
+class A:
+    def __init__(self, a):
+        self.a = a
+ 
+    # adding two objects
+    def __add__(self, o):
+        return self.a + o.a
+ob1 = A(1)
+ob2 = A(2)
+ob3 = A("Geeks")
+ob4 = A("For")
+print(ob1 + ob2)
+print(ob3 + ob4)
+
+Q7. When do you consider allowing operator overloading of your classes?
+Ans. Consider that we have two objects which are a physical representation of a class 
+(user-defined data type) and we have to add two objects with binary '+' operator it 
+throws an error, because compiler don't know how to add two objects. So we define a 
+method for an operator and that process is called operator overloading.
+
+Q8. What is the most popular form of operator overloading?
+Ans. Operator	Magic Method
++	__add__(self, other)
+–	__sub__(self, other)
+*	__mul__(self, other)
+/	__truediv__(self, other)
+//	__floordiv__(self, other)
+%	__mod__(self, other)
+**	__pow__(self, other)
+>>	__rshift__(self, other)
+<<	__lshift__(self, other)
+&	__and__(self, other)
+|	__or__(self, other)
+^	__xor__(self, other)
+Comparison Operators :
+Operator	Magic Method
+<	__LT__(SELF, OTHER)
+>	__GT__(SELF, OTHER)
+<=	__LE__(SELF, OTHER)
+>=	__GE__(SELF, OTHER)
+==	__EQ__(SELF, OTHER)
+!=	__NE__(SELF, OTHER)
+Assignment Operators :
+Operator	Magic Method
+-=	__ISUB__(SELF, OTHER)
++=	__IADD__(SELF, OTHER)
+*=	__IMUL__(SELF, OTHER)
+/=	__IDIV__(SELF, OTHER)
+//=	__IFLOORDIV__(SELF, OTHER)
+%=	__IMOD__(SELF, OTHER)
+**=	__IPOW__(SELF, OTHER)
+>>=	__IRSHIFT__(SELF, OTHER)
+<<=	__ILSHIFT__(SELF, OTHER)
+&=	__IAND__(SELF, OTHER)
+|=	__IOR__(SELF, OTHER)
+^=	__IXOR__(SELF, OTHER)
+Unary Operators :
+Operator	Magic Method
+–	__NEG__(SELF, OTHER)
++	__POS__(SELF, OTHER)
+~	__INVERT__(SELF, OTHER)
+Q9. What are the two most important concepts to grasp in order to comprehend Python OOP code?
+Ans. Inheritance and Ploymorphism
