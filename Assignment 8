@@ -1,0 +1,11 @@
+Q1. What are the two latest user-defined exception constraints in Python 3.X?
+Ans. MyError and NetworkError
+Q2. How are class-based exceptions that have been raised matched to handlers?
+Ans. By using catch with same class name
+Q3. Describe two methods for attaching context information to exception artefacts.
+Ans. catch() and finally() can be used for this.
+Q4. Describe two methods for specifying the text of an exception object's error message.
+Ans. If you want the error class, error message, and stack trace, use sys. exc_info() . The 
+function sys. exc_info() gives you details about the most recent exception.
+Q5. Why do you no longer use string-based exceptions?
+Ans. Class Based exception can be used for inheritance again but string based exception can't.
