@@ -1,0 +1,48 @@
+Q1. What is the concept of a metaclass?
+Ans. A metaclass in Python is a class of a class that defines how a class 
+behaves. A class is itself an instance of a metaclass. A class in Python defines 
+how the instance of the class will behave. In order to understand metaclasses 
+well, one needs to have prior experience working with Python classes.
+
+Q2. What is the best way to declare a class's metaclass?
+Ans. To create our custom metaclass, our custom metaclass has to inherit type metaclass and usually override – 
+__new__(): It’s a method which is called before __init__(). It creates the object and return it. We can override this method to control how the objects are created.
+__init__(): This method just initialize the created object passed as parameter
+We can create classes using type() function directly. It can be called in following ways – 
+When called with only one argument, it returns the type. We have seen it before in above examples.
+When called with three parameters, it creates a class. Following arguments are passed to it – 
+Class name
+Tuple having base classes inherited by class
+Class Dictionary: It serves as local namespace for the class, populated with class methods and variables
+def test_method(self):
+    print("This is Test class method!")
+# creating a base class
+class Base:
+    def myfun(self):
+        print("This is inherited method!")
+# Creating Test class dynamically using
+# type() method directly
+Test = type('Test', (Base, ), dict(x="atul", my_method=test_method))
+# Print type of Test
+print("Type of Test class: ", type(Test))
+# Creating instance of Test class
+test_obj = Test()
+print("Type of test_obj: ", type(test_obj))
+# calling inherited method
+test_obj.myfun()
+# calling Test class method
+test_obj.my_method()
+# printing variable
+print(test_obj.x)
+
+Q3. How do class decorators overlap with metaclasses for handling classes?
+Ans. Image result for How do class decorators overlap with metaclasses for handling classes
+Decorators are very powerful and useful tool in Python since it allows programmers to 
+modify the behavior of function or class. Decorators allow us to wrap another function 
+in order to extend the behavior of the wrapped function, without permanently modifying it.
+
+Q4. How do class decorators overlap with metaclasses for handling instances?
+Ans. In fact, instance creation is not intercepted at all. In this specific 
+case—adding methods to a class when it's created—the choice between metaclasses 
+and decorators is somewhat arbitrary. Decorators can be used to manage both instances 
+and classes, and they intersect with metaclasses in the second of these roles.
