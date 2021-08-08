@@ -1,0 +1,14 @@
+Q1. What is the difference between __getattr__ and __getattribute__?
+Ans. getattribute: Is used to retrieve an attribute from an instance.
+getattr: Is executed as the last resource when attribute is not found in an object.
+
+Q2. What is the difference between properties and descriptors?
+Ans. descriptors are a low-level mechanism that lets you hook into an object's attributes being accessed. 
+Properties are a high-level application of this; that is, properties are implemented using descriptors.
+
+Q3. What are the key differences in functionality between __getattr__ and __getattribute__, as well as
+properties and descriptors?
+Ans. getattribute: Is used to retrieve an attribute from an instance.
+getattr: Is executed as the last resource when attribute is not found in an object.
+     descriptors are a low-level mechanism that lets you hook into an object's attributes being accessed. 
+Properties are a high-level application of this; that is, properties are implemented using descriptors.
