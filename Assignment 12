@@ -1,0 +1,48 @@
+Q1. Does assigning a value to a string's indexed character violate Python's string immutability?
+Ans. No, it doesn't.
+
+Q2. Does using the += operator to concatenate strings violate Python's string immutability? Why or
+why not?
+Ans. The in-place operator += can also be used. The string on the right is concatenated after the 
+string variable on the left. If you want to add a string to the end of a string variable, use the 
++= operator.
+
+Q3. In Python, how many different ways are there to index a character?
+Ans. We can access characters in a String in Two ways : Accessing Characters by Positive Index 
+Number. Accessing Characters by Negative Index Number.
+
+Q4. What is the relationship between indexing and slicing?
+Ans. “Indexing” means referring to an element of an iterable by its position within the iterable. 
+“Slicing” means getting a subset of elements from an iterable based on their indices.
+
+Q5. What is an indexed character's exact data type? What is the data form of a slicing-generated
+substring?
+Ans. Indexed character datatype in python is int(for list) and string /int/float(for dictionary).
+Data form of a slicing-generated substring is a subset of characters of string.
+
+Q6. What is the relationship between string and character types in Python?
+Ans. In Python, Strings are arrays of bytes representing Unicode characters. However, Python does 
+not have a character data type, a single character is simply a string with a length of 1. Square 
+brackets can be used to access elements of the string.
+
+Q7. Identify at least two operators and one method that allow you to combine one or more smaller
+strings to create a larger string.
+Ans. + and +=
+
+Q8. What is the benefit of first checking the target string with in or not in before using the index
+method to find a substring?
+Ans. We can avoid exception if the substring isn't in the  string.
+
+Q9. Which operators and built-in string methods produce simple Boolean (true/false) results?
+Ans. All realtional operators like <, >, <=, >=, ==, != and the methods of string are 
+isalnum()	Returns True if all characters in the string are alphanumeric
+isalpha()	Returns True if all characters in the string are in the alphabet
+isdecimal()	Returns True if all characters in the string are decimals
+isdigit()	Returns True if all characters in the string are digits
+isidentifier()	Returns True if the string is an identifier
+islower()	Returns True if all characters in the string are lower case
+isnumeric()	Returns True if all characters in the string are numeric
+isprintable()	Returns True if all characters in the string are printable
+isspace()	Returns True if all characters in the string are whitespaces
+istitle()	Returns True if the string follows the rules of a title
+isupper()	Returns True if all characters in the string are upper case
