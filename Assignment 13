@@ -1,0 +1,30 @@
+Q1. Can you create a programme or function that employs both positive and negative indexing? Is
+there any repercussion if you do so?
+Ans,  Yes, I can create a function with both positive and negative indexing.
+
+Q2. What is the most effective way of starting with 1,000 elements in a Python list? Assume that all
+elements should be set to the same value.
+Ans. Create an array with 0 of 1,000 elements.
+
+Q3. How do you slice a list to get any other part while missing the rest? (For example, suppose you
+want to make a new list with the elements first, third, fifth, seventh, and so on.)
+Ans. list[start:end:step]
+
+Q4. Explain the distinctions between indexing and slicing.
+Ans. indexing is  the process the access elements of list by index.
+slicing is the process to access a particular part of list.
+
+Q5. What happens if one of the slicing expression's indexes is out of range?
+Ans. Ir will generate IndexOutOfBound exception.\
+
+Q6. If you pass a list to a function, and if you want the function to be able to change the values of the
+list—so that the list is different after the function returns—what action should you avoid?
+Ans. We should keep in mind  that  the return value of the function should be stored in the list.
+
+Q7. What is the concept of an unbalanced matrix?
+Ans. Whenever the cost matrix of an assignment problem is not a square matrix, that is, whenever 
+the number of sources is not equal to the number of destinations, the assignment problem is 
+called an unbalanced assignment problem.
+
+Q8. Why is it necessary to use either list comprehension or a loop to create arbitrarily large matrices?
+Ans. We should not do  the same process for each element.
