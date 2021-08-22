@@ -1,0 +1,72 @@
+Q1. Is an assignment operator like += only for show? Is it possible that it would lead to faster results
+at the runtime?
+Ans. No, It's called shorthand operator. 
+Depending on how you think about it, it's actually easier to understand because it's more straightforward. Take, for example:
+x = x + 5 invokes the mental processing of "take x, add five to it, and then assign that new value back to x"
+x += 5 can be thought of as "increase x by 5"
+So, it's not just shorthand, it actually describes the functionality much more directly. When reading through gobs of code, it's much easier to grasp.
+
+Q2. What is the smallest number of statements you'd have to write in most programming languages to
+replace the Python expression a, b = a + b, a?
+Ans. if-else block
+
+Q3. In Python, what is the most effective way to set a list of 100 integers to 0?
+Ans: l = [0]*100
+
+Q4. What is the most effective way to initialise a list of 99 integers that repeats the sequence 1, 2, 3?
+S If necessary, show step-by-step instructions on how to accomplish this.
+Ans. l=[1, 2, 3]*33
+
+Q5. If you're using IDLE to run a Python application, explain how to print a multidimensional list as
+efficiently?
+Ans. To print out the entire two dimensional array we can use python for loop as shown below. We use end of line to print out the values in different rows.
+Example
+from array import *
+T = [[11, 12, 5, 2], [15, 6,10], [10, 8, 12, 5], [12,15,8,6]]
+for r in T:
+   for c in r:
+      print(c,end = " ")
+   print()
+Output
+When the above code is executed, it produces the following result −
+11 12  5 2 
+15  6 10 
+10  8 12 5 
+12 15  8 6 
+
+Q6. Is it possible to use list comprehension with a string? If so, how can you go about doing it?
+Ans. Yes, it's possible.
+It's same like list comprehension.
+
+Q7. From the command line, how do you get support with a user-written Python programme? Is this
+possible from inside IDLE?
+Ans. t this point, you should have a working Python 3 interpreter at hand. If you need help getting Python 
+set up correctly. 
+To run Python scripts with the python command, you need to open a command-line and type in the word python , 
+or python3 if you have both versions, followed by the path to your script, just like this: $ python3 hello.py Hello World!
+
+Q8. Functions are said to be “first-class objects” in Python but not in most other languages, such as
+C++ or Java. What can you do in Python with a function (callable object) that you can't do in C or
+C++?
+Ans. All functions in Python are first-class functions. To say that functions are first-class in a certain programming language 
+means that they can be passed around and manipulated similarly to how you would pass around and manipulate other kinds of objects 
+(like integers or strings).
+Other language like C, C++ doesn't use function in this way.
+
+Q9. How do you distinguish between a wrapper, a wrapped feature, and a decorator?
+Ans. Wrappers around the functions are also knows as decorators which are a very powerful and useful tool in Python since it allows 
+programmers to modify the behavior of function or class. Decorators allow us to wrap another function in order to extend the behavior 
+of the wrapped function, without permanently modifying it.
+
+Q10. If a function is a generator function, what does it return?
+Ans. A generator is a special type of function which does not return a single value, instead, it returns an iterator object with a 
+sequence of values. In a generator function, a yield statement is used rather than a return statement.
+
+Q11. What is the one improvement that must be made to a function in order for it to become a
+generator function in the Python language?
+Ans. yield statement should  be added at the end of the function.
+
+Q12. Identify at least one benefit of generators.
+Ans. Python Generator functions allow you to declare a function that behaves likes an iterator, allowing programmers to make an iterator 
+in a fast, easy, and clean way. An iterator is an object that can be iterated or looped upon. It is used to abstract a container of data 
+to make it behave like an iterable object.
