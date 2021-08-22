@@ -1,0 +1,24 @@
+1. What are the new features added in Python 3.8 version?
+Ans. Significant additions in Python 3.8 such as walrus operator, positional only arguments, new syntax warnings. ... Python 3.8 
+adds some new syntax to the language, a few minor changes to existing behavior, and mostly a bunch of speed improvements — maintaining 
+the tradition from the earlier 3.7 release.
+2. What is monkey patching in Python?
+Ans. In Python, the term monkey patch refers to dynamic (or run-time) modifications of a class or module. In Python, we can actually change 
+the behavior of code at run-time.
+
+3. What is the difference between a shallow copy and deep copy?
+Ans. Shallow Copy	                                                                                    Deep Copy
+Shallow Copy stores the references of objects to the original memory address.   	                    Deep copy stores copies of the object’s value.
+Shallow Copy reflects changes made to the new/copied object in the original object.	                  Deep copy doesn’t reflect changes made to the new/copied object in the original object.
+Shallow Copy stores the copy of the original object and points the references to the objects.	        Deep copy stores the copy of the original object and recursively copies the objects as well.
+Shallow copy is faster.	                                                                              Deep copy is comparatively slower.
+
+4. What is the maximum possible length of an identifier?
+Ans. In Python, the highest possible length of an identifier is 79 characters. Python 
+is a high level programming language. It's also a complex form and a collector of waste. 
+Python, particularly when combined with identifiers, is case-sensitive.
+
+5. What is generator comprehension?
+Ans. A generator is a special kind of iterator, which stores the instructions for how to generate each of its 
+members, in order, along with its current state of iterations. It generates each member, one at a time, only 
+as it is requested via iteration.
